@@ -18,11 +18,21 @@
   - `npm run test-occurrences`
 */
 
-
 function countOccurrences(arr) {
   // Your code here
+  let result = {};
+
+  for (let num of arr) {
+    if (result[num]) {
+      result[num] = result[num] + 1;
+    } else {
+      result[num] = 1;
+    }
+  }
+  return result;
 }
 
+let ans = countOccurrences([10, 20, 30, 20, 30, 45, 7]);
+console.log(ans);
+
 module.exports = countOccurrences;
-
-

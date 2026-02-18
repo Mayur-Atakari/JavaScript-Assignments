@@ -20,6 +20,13 @@
 
 function reverseString(str) {
   // Your code here
+  let empStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    empStr += str[i];
+  }
+  return empStr;
 }
+
+console.log(reverseString("hello"));
 
 module.exports = reverseString;

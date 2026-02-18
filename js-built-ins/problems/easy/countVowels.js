@@ -26,10 +26,19 @@
 */
 
 function countVowels(str) {
+  let count = 0;
+  // let ch = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  let char = "aeiouAEIOU";
   // Your code here
+  for (let ch of str) {
+    // if (ch === "a" || ch === "e" || ch === "i" || ch === "o" || ch === "u") {
+    if (char.includes(ch)) {
+      count++;
+    }
+  }
+  return count;
 }
 
+let ans = countVowels("hellosumit AE");
+console.log(ans);
 module.exports = { countVowels };
-
-
-

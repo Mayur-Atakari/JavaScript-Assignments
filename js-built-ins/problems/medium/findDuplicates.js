@@ -18,10 +18,27 @@
   - `npm run test-duplicates`
 */
 
-
 function findDuplicates(arr) {
-  return arr.filter((ele, index) => arr.indexOf(ele) !== index);
+  // return arr.filter((Element, index) => arr.indexOf(Element) !== index);
+  // let countDuplicates = [...new Set(arr)];
+  // console.log(countDuplicates);
+
+  let countDuplicates = [];
+
+  let count = 0;
+
+  for (let num of arr) {
+    if (countDuplicates.includes(num)) {
+      count++;
+      countDuplicates = [];
+      countDuplicates.push(num);
+    } else {
+      countDuplicates.push(num);
+    }
+  }
+  return countDuplicates;
 }
 
+let ans = findDuplicates([10, 20, 30, 20]);
+console.log(ans);
 module.exports = findDuplicates;
-

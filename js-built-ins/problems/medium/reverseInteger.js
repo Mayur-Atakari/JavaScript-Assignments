@@ -22,7 +22,19 @@
 */
 
 function reverseInteger(num) {
+  let sign = num < 0 ? -1 : 1;
+
+  num = Math.abs(num);
   // Your code here
+  let result = 0;
+  while (num > 0) {
+    lastdigit = num % 10;
+    result = result * 10 + lastdigit;
+    num = Math.floor(num / 10);
+  }
+  return result * sign;
 }
 
+let ans = reverseInteger(-231);
+console.log(ans);
 module.exports = reverseInteger;

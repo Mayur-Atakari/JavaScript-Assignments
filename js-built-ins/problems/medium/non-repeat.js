@@ -22,5 +22,19 @@
 */
 function nonrepeat(str) {
   // Your code here
+  let nonReapetitive = {};
+  for (let ch of str) {
+    nonReapetitive[ch] = (nonReapetitive[ch] || 0) + 1;
+  }
+
+  for (let ch of str) {
+    if (nonReapetitive[ch] === 1) {
+      return ch;
+    }
+  }
+  return null;
 }
+
+let ans = nonrepeat("abcab");
+console.log(ans);
 module.exports = nonrepeat;

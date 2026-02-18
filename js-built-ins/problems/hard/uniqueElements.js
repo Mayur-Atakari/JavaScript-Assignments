@@ -20,6 +20,18 @@
 
 function getUniqueElements(arr) {
   // Your code here
+  let uniqueEle = [];
+
+  for (let num of arr) {
+    if (uniqueEle.includes(num)) {
+      continue;
+    } else {
+      uniqueEle.push(num);
+    }
+  }
+  return uniqueEle;
 }
 
+let ans = getUniqueElements([10, 20, 30, 10, 40, 20, 30]);
+console.log(ans);
 module.exports = getUniqueElements;
